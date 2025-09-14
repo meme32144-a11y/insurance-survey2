@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แบบสอบถามการประเมิน Life Gaps สำหรับการวางแผนประกันภัย</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- Header -->
+        <header class="survey-header text-center py-4 mb-4">
+            <div class="container">
+                <h1 class="display-6 fw-bold text-white mb-2">
+                    <i class="fas fa-shield-alt me-2"></i>
+                    แบบสอบถามการประเมิน Life Gaps
+                </h1>
+                <p class="lead text-white-50 mb-0">สำหรับการวางแผนประกันภัยที่เหมาะสมกับไลฟ์สไตล์ของคุณ</p>
+            </div>
+        </header>
+
+        <div class="container">
+            <!-- Progress Bar -->
+            <div class="progress-section mb-4">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="text-muted">ความคืบหน้า</span>
+                    <span class="progress-text">ขั้นตอนที่ 1 จาก 6</span>
+                </div>
+                <div class="progress" style="height: 8px;">
+                    <div class="progress-bar" role="progressbar" style="width: 16.67%" aria-valuenow="1" aria-valuemin="0" aria-valuemax="6"></div>
+                </div>
+            </div>
+
+            <!-- Introduction Section -->
+            <div id="introduction" class="section-card active">
+                <div class="card shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="text-center mb-4">
+                            <i class="fas fa-info-circle fa-3x text-primary mb-3"></i>
+                            <h2 class="card-title">คำนำ</h2>
+                        </div>
+                        <div class="introduction-content">
+                            <p class="lead">แบบสอบถามนี้ออกแบบมาเพื่อช่วยให้เราเข้าใจปัจจัยสำคัญในชีวิตของคุณ เพื่อนำไปสู่การวิเคราะห์ความต้องการประกันภัยที่เหมาะสมกับไลฟ์สไตล์ของคุณมากที่สุด</p>
+                            
+                            <div class="alert alert-info">
+                                <i class="fas fa-lightbulb me-2"></i>
+                                การรู้จักตัวเองและเตรียมความพร้อมสำหรับอนาคตเป็นสิ่งสำคัญที่จะช่วยให้คุณมีคุณภาพชีวิตที่ดีขึ้น
+                            </div>
+
+                            <div class="row mb-4">
+                                <div class="col-md-6">
+                                    <div class="info-item">
+                                        <i class="fas fa-clock text-success me-2"></i>
+                                        <strong>เวลาที่ใช้:</strong> ประมาณ 15-20 นาที
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="info-item">
+                                        <i class="fas fa-lock text-success me-2"></i>
+                                        <strong>ความเป็นส่วนตัว:</strong> ข้อมูลจะถูกเก็บรักษาเป็นความลับอย่างเคร่งครัด
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="text-center">
+                                <button type="button" class="btn btn-primary btn-lg px-5" onclick="startSurvey()">
+                                    <i class="fas fa-play me-2"></i>เริ่มทำแบบสอบถาม
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Survey Form -->
+            <form id="surveyForm" class="d-none">
+                <!-- Section 1: Basic Information -->
+                <div id="section-1" class="section-card">
+                    <div class="card shadow-sm">
+                        <div class="card-header">
+                            <h3 class="card-title mb-0">
+                                <i class="fas fa-user text-primary me-2"></i>
+                                ส่วนที่ 1: ข้อมูลพื้นฐาน
+                            </h3>
+                        </div>
+                        <div class="card-body">
+                            <!-- Age Question -->
+                            <div class="question-group mb-4">
+                                <label class="form-label required">อายุของคุณ</label>
+                                <div class="radio-group">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="age" id="age1" value="ต่ำกว่า 25 ปี" required>
+                                        <label class="form-check-label" for="age1">ต่ำกว่า 25 ปี</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="age" id="age2" value="25-35 ปี" required>
+                                        <label class="form-check-label" for="age2">25-35 ปี</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="age" id="age3" value="36-45 ปี" required>
+                                        <label class="form-check-label" for="age3">36-45 ปี</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="age" id="age4" value="46-55 ปี" required>
+                                        <label class="form-check-label" for="age4">46-55 ปี</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="age" id="age5" value="56-65 ปี" required>
+                                        <label class="form-check-label" for="age5">56-65 ปี</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="age" id="age6" value="มากกว่า 65 ปี" required>
+                                        <label class="form-check-label" for="age6">มากกว่า 65 ปี</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Gender Question -->
+                            <div class="question-group mb-4">
+                                <label class="form-label required">เพศ</label>
+                                <div class="radio-group">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gender" id="gender1" value="ชาย" required>
+                                        <label class="form-check-label" for="gender1">ชาย</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gender" id="gender2" value="หญิง" required>
+                                        <label class="form-check-label" for="gender2">หญิง</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gender" id="gender3" value="ไม่ต้องการระบุ" required>
+                                        <label class="form-check-label" for="gender3">ไม่ต้องการระบุ</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Status Question -->
+                            <div class="question-group mb-4">
+                                <label class="form-label required">สถานภาพปัจจุบัน</label>
+                                <div class="radio-group">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="status" id="status1" value="โสด" required>
+                                        <label class="form-check-label" for="status1">โสด</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="status" id="status2" value="แต่งงาน/อยู่ด้วยกัน (ไม่มีลูก)" required>
+                                        <label class="form-check-label" for="status2">แต่งงาน/อยู่ด้วยกัน (ไม่มีลูก)</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="status" id="status3" value="แต่งงาน/อยู่ด้วยกัน (มีลูก)" required>
+                                        <label class="form-check-label" for="status3">แต่งงาน/อยู่ด้วยกัน (มีลูก)</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="status" id="status4" value="หย่าร้าง/แยกทาง (มีลูก)" required>
+                                        <label class="form-check-label" for="status4">หย่าร้าง/แยกทาง (มีลูก)</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="status" id="status5" value="หย่าร้าง/แยกทาง (ไม่มีลูก)" required>
+                                        <label class="form-check-label" for="status5">หย่าร้าง/แยกทาง (ไม่มีลูก)</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="status" id="status6" value="หม้าย" required>
+                                        <label class="form-check-label" for="status6">หม้าย</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Children Information (Conditional) -->
+                            <div id="children-info" class="conditional-section d-none">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="question-group mb-4">
+                                            <label for="children_count" class="form-label">จำนวนลูก (คน)</label>
+                                            <input type="number" class="form-control" id="children_count" name="children_count" min="0" max="20">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="question-group mb-4">
+                                            <label for="youngest_age" class="form-label">อายุลูกคนเล็กสุด (ปี)</label>
+                                            <input type="number" class="form-control" id="youngest_age" name="youngest_age" min="0" max="50">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional sections will be added here -->
+                
+            </form>
+
+            <!-- Summary Section -->
+            <div id="summary-section" class="section-card d-none">
+                <div class="card shadow-sm">
+                    <div class="card-header">
+                        <h3 class="card-title mb-0">
+                            <i class="fas fa-check-circle text-success me-2"></i>
+                            สรุปข้อมูลที่กรอก
+                        </h3>
+                    </div>
+                    <div class="card-body">
+                        <div id="summary-content"></div>
+                        <div class="text-center mt-4">
+                            <button type="button" class="btn btn-secondary me-2" onclick="editSurvey()">
+                                <i class="fas fa-edit me-2"></i>แก้ไขข้อมูล
+                            </button>
+                            <button type="button" class="btn btn-success" onclick="submitSurvey()">
+                                <i class="fas fa-paper-plane me-2"></i>ส่งข้อมูล
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thank You Section -->
+            <div id="thank-you-section" class="section-card d-none">
+                <div class="card shadow-sm">
+                    <div class="card-body text-center py-5">
+                        <i class="fas fa-heart fa-3x text-success mb-4"></i>
+                        <h2 class="text-success mb-3">ขอบคุณสำหรับข้อมูลที่มีค่า!</h2>
+                        <p class="lead">การรู้จักตัวเองเป็นก้าวแรกสู่การวางแผนชีวิตที่มั่นคงและมีความสุข</p>
+                        <p class="text-muted">ข้อมูลของคุณได้รับการบันทึกเรียบร้อยแล้ว เราจะนำไปวิเคราะห์และเสนอแผนประกันที่เหมาะสมกับคุณ</p>
+                        
+                        <div class="mt-4">
+                            <button type="button" class="btn btn-primary" onclick="location.reload()">
+                                <i class="fas fa-redo me-2"></i>ทำแบบสอบถามใหม่
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div id="navigation" class="d-flex justify-content-between mt-4 mb-5 d-none">
+                <button type="button" class="btn btn-outline-secondary" id="prevBtn" onclick="previousSection()">
+                    <i class="fas fa-chevron-left me-2"></i>ย้อนกลับ
+                </button>
+                <button type="button" class="btn btn-primary" id="nextBtn" onclick="nextSection()">
+                    ถัดไป<i class="fas fa-chevron-right ms-2"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Loading Modal -->
+        <div class="modal fade" id="loadingModal" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-body text-center py-4">
+                        <div class="spinner-border text-primary mb-3" role="status">
+                            <span class="visually-hidden">กำลังส่งข้อมูล...</span>
+                        </div>
+                        <div>กำลังส่งข้อมูล...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
